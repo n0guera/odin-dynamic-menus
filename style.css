@@ -1,0 +1,25 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: grey;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  color: #42f4af;
+  background-color: #051e45;
+  border: 1px solid #42f4af;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+}
+
+nav ul li:hover {
+  background-color: #0b586e;
+}
