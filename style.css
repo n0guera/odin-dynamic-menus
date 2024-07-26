@@ -14,7 +14,7 @@ ul {
   justify-content: center;
 }
 
-.menu-item {
+.nav-item {
   color: #42f4af;
   background-color: #051e45;
   border: 1px solid #42f4af;
@@ -25,7 +25,7 @@ ul {
   font-size: 18px;
 }
 
-.menu-item:hover {
+.nav-item-hover {
   background-color: #0b586e;
   cursor: pointer;
 }
