@@ -15,11 +15,7 @@ const listContainers = document.querySelectorAll('.list-container');
 listContainers.forEach((list) => {
   const navLists = list.children;
 
-  console.log(navLists);
-
   for (let i = 0; i < navLists.length; i += 1) {
-    console.log(navLists[i]);
-
     list.onmouseover = () => {
       list.classList.add('nav-item-hover');
       navLists[i].classList.add('nav-list-visible');
