@@ -1,6 +1,6 @@
-const menuItems = document.querySelectorAll(".nav-item");
+const navItems = document.querySelectorAll('.nav-item');
 
-menuItems.forEach((item) => {
+navItems.forEach((item) => {
   item.onmouseover = () => {
     item.classList.add('nav-item-hover');
   }
@@ -9,3 +9,26 @@ menuItems.forEach((item) => {
     item.classList.remove('nav-item-hover');
   }
 })
+
+const listContainers = document.querySelectorAll('.list-container');
+
+listContainers.forEach((list) => {
+  const navLists = list.children;
+
+  console.log(navLists);
+
+  for (let i = 0; i < navLists.length; i += 1) {
+    console.log(navLists[i]);
+
+    list.onmouseover = () => {
+      list.classList.add('nav-item-hover');
+      navLists[i].classList.add('nav-list-visible');
+    }
+
+    list.onmouseout = () => {
+      list.classList.remove('nav-item-hover');
+      navLists[i].classList.remove('nav-list-visible');
+    }
+  }
+})
+

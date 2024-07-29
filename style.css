@@ -30,10 +30,10 @@ ul {
   cursor: pointer;
 }
 
-#nav-bar ul {
+.nav-list {
   display: none;
 }
 
-#nav-bar li:hover > ul {
+.nav-list-visible {
   display: block;
 }
