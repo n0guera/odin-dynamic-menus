@@ -9,15 +9,22 @@ ul {
   padding: 0;
 }
 
-#nav-bar {
+nav {
   display: flex;
   justify-content: center;
+}
+
+#nav-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1px;
+  background-color: #42f4af;
+  padding: 1px;
 }
 
 .nav-item {
   color: #42f4af;
   background-color: #051e45;
-  border: 1px solid #42f4af;
   width: 150px;
   height: 50px;
   line-height: 50px;
