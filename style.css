@@ -60,3 +60,9 @@ nav {
 .nav-list {
   background-color: #42f4af;
 }
+
+#picture-frame {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
