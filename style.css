@@ -24,6 +24,7 @@ nav {
   gap: 1px;
   background-color: #42f4af;
   padding: 1px;
+  z-index: 1;
 }
 
 .nav-item {
@@ -64,5 +65,5 @@ nav {
 #picture-frame {
   display: flex;
   justify-content: center;
-  margin-top: 8px;
+  margin-top: 24px;
 }
