@@ -28,3 +28,10 @@ listContainers.forEach((list) => {
   }
 })
 
+const pictureFrame = document.querySelector('#picture-frame');
+
+const picContainers = pictureFrame.children;
+
+for (let i = 0; i < picContainers.length; i += 1) {
+  picContainers[i].id = 'pic-container-' + i;
+}
