@@ -33,5 +33,20 @@ const pictureFrame = document.querySelector('#picture-frame');
 const picContainers = pictureFrame.children;
 
 for (let i = 0; i < picContainers.length; i += 1) {
-  picContainers[i].id = 'pic-container-' + i;
+  picContainers[i].id = 'pic-container-' + (i + 1);
 }
+
+
+const controlBtns = document.querySelectorAll('.control-btn');
+controlBtns.forEach((button) => {
+  button.addEventListener('click', () => {
+    const activePic = document.querySelector("[data-active]");
+    const offset = button.id === 'btn-next' ? 1 : -1;
+    let newIndex = [...picContainers].indexOf(activePic) + offset;
+    if (newIndex < 0) newIndex = picContainers.length - 1;
+    if (newIndex >= picContainers.length) newIndex = 0;
+    picContainers[newIndex].dataset.active = true;
+    delete activePic.dataset.active;
+  })
+})
+
