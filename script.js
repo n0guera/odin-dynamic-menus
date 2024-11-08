@@ -28,14 +28,18 @@ listContainers.forEach((list) => {
   }
 })
 
-const pictureFrame = document.querySelector('#picture-frame');
+const picContainers = document.querySelectorAll('.picture-container');
 
-const picContainers = pictureFrame.children;
-
-for (let i = 0; i < picContainers.length; i += 1) {
-  picContainers[i].id = 'pic-container-' + (i + 1);
-}
-
+const updatePicContainers = () => {
+  picContainers.forEach((container) => {
+    if (!container.dataset.active) {
+      container.style.display = "none";
+    } else {
+      container.style.display = "block";
+    }
+  })
+};
+updatePicContainers();
 
 const controlBtns = document.querySelectorAll('.control-btn');
 controlBtns.forEach((button) => {
@@ -47,6 +51,7 @@ controlBtns.forEach((button) => {
     if (newIndex >= picContainers.length) newIndex = 0;
     picContainers[newIndex].dataset.active = true;
     delete activePic.dataset.active;
+    updatePicContainers();
   })
 })
 
