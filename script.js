@@ -78,3 +78,6 @@ controlBtns.forEach((button) => {
   })
 })
 
+setInterval(() => {
+  switchPic({ target: { id: 'btn-next' } });
+}, 5000);
