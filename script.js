@@ -41,17 +41,22 @@ const updatePicContainers = () => {
 };
 updatePicContainers();
 
+const switchPic = (button) => {
+  const activePic = document.querySelector("[data-active]");
+  const offset = button.target.id === 'btn-next' ? 1 : -1;
+  let newIndex = [...picContainers].indexOf(activePic) + offset;
+  if (newIndex < 0) newIndex = picContainers.length - 1;
+  if (newIndex >= picContainers.length) newIndex = 0;
+  picContainers[newIndex].dataset.active = true;
+  delete activePic.dataset.active;
+  updatePicContainers();
+};
+
 const controlBtns = document.querySelectorAll('.control-btn');
+
 controlBtns.forEach((button) => {
-  button.addEventListener('click', () => {
-    const activePic = document.querySelector("[data-active]");
-    const offset = button.id === 'btn-next' ? 1 : -1;
-    let newIndex = [...picContainers].indexOf(activePic) + offset;
-    if (newIndex < 0) newIndex = picContainers.length - 1;
-    if (newIndex >= picContainers.length) newIndex = 0;
-    picContainers[newIndex].dataset.active = true;
-    delete activePic.dataset.active;
-    updatePicContainers();
+  button.addEventListener('click', (e) => {
+    switchPic(e);
   })
 })
 
