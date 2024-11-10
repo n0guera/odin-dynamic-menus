@@ -30,6 +30,8 @@ listContainers.forEach((list) => {
 
 const picContainers = document.querySelectorAll('.picture-container');
 
+const navDots = document.querySelectorAll('.dot');
+
 const updatePicContainers = () => {
   picContainers.forEach((container) => {
     if (!container.dataset.active) {
@@ -41,6 +43,21 @@ const updatePicContainers = () => {
 };
 updatePicContainers();
 
+
+const updateDots = () => {
+  const activePic = document.querySelector('[data-active]');
+  const activeDot = document.querySelector('[data-active-dot]');
+  delete activeDot.dataset.activeDot;
+  const dotIndex = [...picContainers].indexOf(activePic);
+  navDots[dotIndex].dataset.activeDot = true;
+  navDots.forEach((dot) => {
+    if (dot.dataset.activeDot) {
+      dot.style.border = '1px solid #42f4af'
+    } else dot.style.border = '';
+  })
+}
+updateDots();
+
 const switchPic = (button) => {
   const activePic = document.querySelector("[data-active]");
   const offset = button.target.id === 'btn-next' ? 1 : -1;
@@ -50,6 +67,7 @@ const switchPic = (button) => {
   picContainers[newIndex].dataset.active = true;
   delete activePic.dataset.active;
   updatePicContainers();
+  updateDots();
 };
 
 const controlBtns = document.querySelectorAll('.control-btn');
